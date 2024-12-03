@@ -26,6 +26,16 @@ Jupyter Notebook was used for writing and executing the SQL code. It serves as a
 4. **Sql**:(Structured Query Language) is a standard programming language designed to manage and manipulate data stored in relational database systems. It allows users to create, read, update, and delete (CRUD) data in databases efficiently.
 5. **Postgresql**: Is a powerful, open-source, object-relational database management system (RDBMS) that emphasizes extensibility, reliability, and compliance with SQL standards. It is widely used for handling structured data and supports both small-scale and large-scale applications.
 
+   ###### Set up the environment
+Ensure you have all the required libraries installed by running:
+```
+pip install psycopg2-binary
+import pandas as pd
+import psycopg2
+from sqlalchemy import create_engine
+
+```
+
 ### Key Business Questions to Address:
 1. *How can we retrieve details for each order, including the purchased products along with their corresponding department and aisle information?*
    To perform this action, you would execute the following SQL steps:
