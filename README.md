@@ -16,6 +16,8 @@ Using SQL, I joined these insights to generate a unified view, allowing for an i
 4. **orders**: Provides data on individual orders and associated customers.
 5. **products**: Includes information about products, along with their aisle and department IDs.
 
+[Sample dataset screenshot link](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/Sample%20dataset%20screenshot%20in%20Jupyter%20notebook.jpg)
+
 [Dataset link](https://drive.google.com/drive/folders/1obgx7Z6zGAxSIt-6_sVEDkpUotGkWAB2?usp=drive_link)
 
 
