@@ -37,7 +37,7 @@ import psycopg2
 from sqlalchemy import create_engine
 
 ```
-
+[Sample library installation screenshot link](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/Python%20%26%20Sql%20in%20Jupyter%20notebook%202.jpg..jpg)
 ### Key Business Questions to Address:
 1. *How can we retrieve details for each order, including the purchased products along with their corresponding department and aisle information?*
    To perform this action, you would execute the following SQL steps:
