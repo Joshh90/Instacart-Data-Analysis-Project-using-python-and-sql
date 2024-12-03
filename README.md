@@ -225,7 +225,7 @@ FROM product_sales_insights LIMIT 10;
 * Insights into when and how often products are added to carts and purchased.
 
 *Query output screenshot LIMIT 10:*
-[Dataset link 6]()
+[Dataset link 6](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/6th%20screenshot.jpg)
 [Dataset link 7]()
 
 
