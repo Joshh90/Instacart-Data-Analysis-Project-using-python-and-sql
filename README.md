@@ -1,6 +1,8 @@
 # Instacart-Data-Analysis-Project-using-python-and-sql
 ## Description:
-Performed data analysis on Instacart order records using SQL and Python to understand customer behavior and product trends. Processed and transformed data to calculate metrics such as reorder rates, product demand, and purchase patterns. Identified factors driving repeat orders and peak shopping periods. Provided insights to enhance inventory planning and targeted marketing efforts.
+In this project, I developed a comprehensive analytical framework to gain actionable insights into product sales and customer behaviors. By aggregating data from multiple sources, including product, department, and aisle-level details, I created a series of temporary tables to calculate key metrics such as total orders, reorder frequency, product add-to-cart behaviors, and purchase trends.
+
+Using SQL, I joined these insights to generate a unified view, allowing for an in-depth analysis of product performance, customer preferences, and purchase patterns across different departments and aisles. The results were summarized in a final report that provided a clear understanding of weekday vs. weekend purchases, unique product purchases, and average order times. This analysis supports better inventory management, targeted promotions, and enhanced product placement strategies for improved sales performance.
 
 ### About Instacart: 
 *Instacart is an American company that provides a platform for online grocery delivery and pick-up services. It partners with local grocery stores and retailers to enable customers to shop for groceries and household items through the Instacart app or website. A personal shopper picks and delivers the orders to the customer's doorstep or prepares them for pick-up.*
@@ -227,6 +229,10 @@ FROM product_sales_insights LIMIT 10;
 *Query output screenshot LIMIT 10:*
 [Dataset link 6](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/6th%20screenshot.jpg)
 [Dataset link 7](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/7th%20screenshot.jpg)
+
+## Summary:
+In this project, I analyzed product sales and customer behavior by aggregating data from product, department, and aisle levels. Using SQL, I calculated key metrics like total orders, reorders, and add-to-cart behavior, while also analyzing weekday vs. weekend purchase trends. The final insights provided a unified view of product performance, helping optimize inventory and marketing strategies across departments and aisles.
+
 
 
   
