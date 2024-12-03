@@ -153,8 +153,9 @@ Total products purchased (COUNT(*)).
 Unique products purchased (COUNT(DISTINCT product_id)).
 Weekday and weekend purchases using conditional CASE statements.
 Average order time (AVG(order_hour_of_day)).
-* Group by Department: Use GROUP BY department_id, department to aggregate the results for each department.
 ```
+* Group by Department: Use GROUP BY department_id, department to aggregate the results for each department.
+
 
 * Verify Results: Run ```SELECT * FROM department_order_summary``` to view and validate the generated summary.
 
