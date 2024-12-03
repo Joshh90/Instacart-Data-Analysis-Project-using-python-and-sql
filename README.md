@@ -189,7 +189,45 @@ SELECT * FROM aisle_order_summary WHERE rank <= 10 LIMIT 10; -- Retrieve only th
 * Verify Results: Check the data to ensure correctness and rankings are as expected.
 
 *Query output screenshot LIMIT 10:*
-[Dataset link 5]()
+[Dataset link 5](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/5th%20screenshot.jpg)
+
+5. *How can we create a final table that consolidates product and department-level insights, including product details, purchase metrics, reorder trends, and aisle and department-level aggregated statistics such as weekday/weekend purchases and average order times?*
+
+*Execution code block:*
+```
+  WITH product_sales_insights AS (
+    SELECT 
+        oi.product_id,
+        oi.product_name,
+        ds.department_id,
+        ds.department,
+        ao.aisle_id,
+        ao.aisle,
+        oi.total_orders,
+        oi.total_no_of_reordered,
+        oi.avg_no_of_times_of_add_to_cart,
+        ao.total_products_purchased,
+        ao.total_unique_product_purchased,
+        ds.total_weekday_purchases,
+        ds.total_weekend_purchases,
+        ds.avg_order_time
+    FROM order_details o
+    LEFT JOIN order_information oi ON o.product_id = oi.product_id
+    LEFT JOIN department_order_summary ds ON o.department_id = ds.department_id
+    LEFT JOIN aisle_order_summary ao ON o.aisle_id = ao.aisle_id
+)
+SELECT * 
+FROM product_sales_insights LIMIT 10;
+```
+*Here's a quick breakdown of the query*:
+* Product-level metrics like purchase frequency and reorder behavior.
+* Department and aisle-level trends, including total and unique purchases.
+* Insights into when and how often products are added to carts and purchased.
+
+*Query output screenshot LIMIT 10:*
+[Dataset link 6]()
+[Dataset link 7]()
+
 
   
 
