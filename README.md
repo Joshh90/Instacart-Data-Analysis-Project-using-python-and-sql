@@ -34,7 +34,7 @@ Jupyter Notebook was used for writing and executing the SQL code. It serves as a
 * Select relevant columns from each table to include information about the orders, purchased products, and their respective departments and aisles.
 
 
-*Execution code block*
+*Execution code block:*
 ```
 CREATE TEMPORARY TABLE order_details AS
 
@@ -105,7 +105,7 @@ AVG(op.add_to_cart_order) to calculate the average times each product was added 
 
 * Verify the Data: Use SELECT * FROM Order_information to view and verify the data stored in the temporary table.
 
-  *Execution code block*
+  *Execution code block:*
 ```
 -- Step 1: Create a Temporary Table for Order Information
 CREATE TEMPORARY TABLE Order_information AS
