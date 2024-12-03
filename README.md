@@ -88,7 +88,7 @@ departments table (d),
 [Dataset link 2](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/2nd%20screenshot.jpg)
 
 2. How can we create a temporary table that groups orders by product to determine the total number of purchases, the total number of reorders, and the average number of times each product was added to a cart?
-      To perform this action, you would execute the following SQL steps:
+To perform this action, you would execute the following SQL steps:
 
 * Create a Temporary Table: Use the CREATE TEMPORARY TABLE statement to define a new temporary table Order_information that will store the results of the query.
 
@@ -96,7 +96,7 @@ departments table (d),
 
 * Aggregate Data: Use aggregate functions:
 
-use *count(*)*  function to calculate the total number of orders per product.
+use *count( )*  function to calculate the total number of orders per product.
 SUM(CASE WHEN op.reordered = 1 THEN 1 ELSE 0 END) to calculate the total reorders per product.
 AVG(op.add_to_cart_order) to calculate the average times each product was added to a cart.
 * Group the Data: Group the results by product_name and product_id to calculate the aggregates per product.
@@ -104,7 +104,8 @@ AVG(op.add_to_cart_order) to calculate the average times each product was added 
 * Verify the Data: Use SELECT * FROM Order_information to view and verify the data stored in the temporary table.
 
   *Execution code block*
-  ```
+```
+-- Step 1: Create a Temporary Table for Order Information
 CREATE TEMPORARY TABLE Order_information AS
 SELECT 
     p.product_id, 
@@ -123,9 +124,10 @@ GROUP BY
 ORDER BY
     total_orders DESC; -- Optional: Sort by total orders in descending order
 
+-- Step 2: Verify the Data
 SELECT * FROM Order_information;
-
 ```
+*Query output screenshot LIMIT 10:*
 
   
 
