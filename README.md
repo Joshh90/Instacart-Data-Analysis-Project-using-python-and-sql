@@ -158,7 +158,38 @@ Average order time (AVG(order_hour_of_day)).
 
   
 *Query output screenshot LIMIT 10:*
-[Dataset link 4]()
+[Dataset link 4](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/4th%20screenshot.jpg)
+
+4. *What are the top 10 most popular aisles based on the total number of products purchased, and how many unique products were purchased from each aisle?*
+
+*Execution code block:*
+
+```  
+CREATE TEMPORARY TABLE aisle_order_summary AS
+SELECT 
+    aisle_id, 
+    aisle,
+    DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) AS rank, -- Rank aisles by total products purchased
+    COUNT(*) AS total_products_purchased, -- Total number of products purchased from the aisle
+    COUNT(DISTINCT product_id) AS total_unique_product_purchased -- Total unique products purchased from the aisle
+FROM 
+    order_details
+GROUP BY 
+    aisle_id, aisle -- Group by aisle information
+ORDER BY 
+    total_products_purchased DESC; -- Order aisles by total products purchased
+
+-- CHECK
+SELECT * FROM aisle_order_summary WHERE rank <= 10 LIMIT 10; -- Retrieve only the top 10 aisles
+
+```
+*Here's a quick breakdown of the query*:
+* Create the Temporary Table: Run the query to generate aisle_order_summary with rankings and purchase data.
+* Filter Top 10 Aisles: Use ```SELECT * FROM aisle_order_summary WHERE rank <= 10``` to retrieve only the top 10 aisles.
+* Verify Results: Check the data to ensure correctness and rankings are as expected.
+
+*Query output screenshot LIMIT 10:*
+[Dataset link 5]()
 
   
 
