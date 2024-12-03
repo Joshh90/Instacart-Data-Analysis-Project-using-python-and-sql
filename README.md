@@ -84,4 +84,5 @@ departments table (d),
 ```SELECT * FROM order_details; ```: This command retrieves all the data from the temporary table order_details to verify that the table was created and populated correctly.
 
 *Query screenshot LIMIT 10:*
+[Dataset link](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/Ist%20screenshot.jpg)
 
