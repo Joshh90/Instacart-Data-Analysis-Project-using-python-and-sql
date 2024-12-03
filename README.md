@@ -25,7 +25,7 @@ Jupyter Notebook was used for writing and executing the SQL code. It serves as a
 5. **Postgresql**: Is a powerful, open-source, object-relational database management system (RDBMS) that emphasizes extensibility, reliability, and compliance with SQL standards. It is widely used for handling structured data and supports both small-scale and large-scale applications.
 
 ### Key Business Questions to Address:
-1. Retrieve details for each order, including the purchased products along with their corresponding department and aisle information.
+1. How can we retrieve details for each order, including the purchased products along with their corresponding department and aisle information?
    To perform this action, you would execute the following SQL steps:
 
 * Create a temporary table by joining the orders, order_products, aisle, department and products tables.
@@ -69,7 +69,7 @@ SELECT * FROM order_details;
 
 ```
  *Here's a quick breakdown of the query*:
-1. Creating the Temporary Table:
+* Creating the Temporary Table:
 ```CREATE TEMPORARY TABLE order_details AS```: This creates a temporary table named order_details which will store the results of the query.
 ```SELECT```: Retrieves specific columns like order_id, order_number, user_id, etc., from the relevant tables.
 ```JOIN```: The query uses INNER JOINs to combine data from:
@@ -80,9 +80,54 @@ aisles table (a),
 departments table (d),
 ```ORDER BY r.order_number ASC```: Sorts the results by order_number in ascending order.
 
-2. Verifying the Temporary Table:
+* Verifying the Temporary Table:
 ```SELECT * FROM order_details; ```: This command retrieves all the data from the temporary table order_details to verify that the table was created and populated correctly.
 
-*Query screenshot LIMIT 10:*
-[Dataset link](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/Ist%20screenshot.jpg)
+*Query output screenshot LIMIT 10:*
+[Dataset link 1](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/Ist%20screenshot.jpg)
+[Dataset link 2](https://github.com/Joshh90/Instacart-Data-Analysis-Project-using-python-and-sql/blob/main/2nd%20screenshot.jpg)
+
+2. How can we create a temporary table that groups orders by product to determine the total number of purchases, the total number of reorders, and the average number of times each product was added to a cart?
+      To perform this action, you would execute the following SQL steps:
+
+* Create a Temporary Table: Use the CREATE TEMPORARY TABLE statement to define a new temporary table Order_information that will store the results of the query.
+
+* Join Tables: Join the orders, order_products, and products tables to combine order, product, and product details based on order_id and product_id.
+
+* Aggregate Data: Use aggregate functions:
+
+use *count(*)*  function to calculate the total number of orders per product.
+SUM(CASE WHEN op.reordered = 1 THEN 1 ELSE 0 END) to calculate the total reorders per product.
+AVG(op.add_to_cart_order) to calculate the average times each product was added to a cart.
+* Group the Data: Group the results by product_name and product_id to calculate the aggregates per product.
+
+* Verify the Data: Use SELECT * FROM Order_information to view and verify the data stored in the temporary table.
+
+  *Execution code block*
+  ```
+CREATE TEMPORARY TABLE Order_information AS
+SELECT 
+    p.product_id, 
+    p.product_name,
+    COUNT(*) AS total_orders, -- Total number of orders for each product
+    SUM(CASE WHEN op.reordered = 1 THEN 1 ELSE 0 END) AS Total_no_of_reordered, -- Total number of reorders (1 for reorder)
+    AVG(op.add_to_cart_order) AS Avg_no_of_times_of_add_to_cart -- Average times of adding to cart
+FROM 
+    orders r
+JOIN
+    order_products op ON r.order_id = op.order_id
+JOIN
+    products p ON op.product_id = p.product_id
+GROUP BY
+    p.product_name, p.product_id
+ORDER BY
+    total_orders DESC; -- Optional: Sort by total orders in descending order
+
+SELECT * FROM Order_information;
+
+```
+
+  
+
+
 
