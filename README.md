@@ -2,7 +2,11 @@
 ## Description:
 In this project, I developed a comprehensive analytical framework to gain actionable insights into product sales and customer behaviors. By aggregating data from multiple sources, including product, department, and aisle-level details, I created a series of temporary tables to calculate key metrics such as total orders, reorder frequency, product add-to-cart behaviors, and purchase trends.
 
-Using SQL, I joined these insights to generate a unified view, allowing for an in-depth analysis of product performance, customer preferences, and purchase patterns across different departments and aisles. The results were summarized in a final report that provided a clear understanding of weekday vs. weekend purchases, unique product purchases, and average order times. This analysis supports better inventory management, targeted promotions, and enhanced product placement strategies for improved sales performance.
+Using SQL, I joined these insights to generate a unified view, allowing for an in-depth analysis of product performance, customer preferences, and purchase patterns across different departments and aisles. The results were summarized in a final report that provided a clear understanding of weekday vs. weekend purchases, unique product purchases, and average order times. 
+
+### Goal of the project
+
+The goal of this analysis is to supports better inventory management, targeted promotions, and enhanced product placement strategies for improved sales performance.
 
 ### About Instacart: 
 *Instacart is an American company that provides a platform for online grocery delivery and pick-up services. It partners with local grocery stores and retailers to enable customers to shop for groceries and household items through the Instacart app or website. A personal shopper picks and delivers the orders to the customer's doorstep or prepares them for pick-up.*
