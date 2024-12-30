@@ -201,7 +201,8 @@ ORDER BY
     total_products_purchased DESC; -- Order aisles by total products purchased
 
 -- CHECK
-SELECT * FROM aisle_order_summary WHERE rank <= 10 LIMIT 10; -- Retrieve only the top 10 aisles
+SELECT * FROM aisle_order_summary WHERE rank <= 10
+LIMIT 10; -- Retrieve only the top 10 aisles
 
 ```
 *Here's a quick breakdown of the query*:
@@ -238,7 +239,8 @@ SELECT * FROM aisle_order_summary WHERE rank <= 10 LIMIT 10; -- Retrieve only th
     LEFT JOIN aisle_order_summary ao ON o.aisle_id = ao.aisle_id
 )
 SELECT * 
-FROM product_sales_insights LIMIT 10;
+FROM product_sales_insights
+LIMIT 10;
 ```
 *Here's a quick breakdown of the query*:
 * Product-level metrics like purchase frequency and reorder behavior.
