@@ -6,7 +6,7 @@ Using SQL, I joined these insights to generate a unified view, allowing for an i
 
 ### Goal of the project
 
-The goal of this analysis is to supports better inventory management, targeted promotions, and enhanced product placement strategies for improved sales performance.
+The goal of this analysis is to supports better inventory management, targeted promotions, and enhanced product placement strategies for improved sales performance for e-commerce business.
 
 ### About Instacart: 
 *Instacart is an American company that provides a platform for online grocery delivery and pick-up services. It partners with local grocery stores and retailers to enable customers to shop for groceries and household items through the Instacart app or website. A personal shopper picks and delivers the orders to the customer's doorstep or prepares them for pick-up.*
